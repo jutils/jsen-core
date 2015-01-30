@@ -22,9 +22,13 @@ Simply run command: `mvn package`
 ## Using the library
 
 ### Using Maven
-
-(will be completed soon)
-
+```
+<dependency>
+	<groupId>com.jsen</groupId>
+	<artifactId>jsen-core</artifactId>
+	<version>0.0.1</version>
+</dependency>
+```
 ### Custom way
 
 Have built library (see previous section) and have it specified on classpath
