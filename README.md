@@ -1,4 +1,4 @@
-JSEN - JavaScript Engine
+JSEN Core - Java Script Engine Core
 ======
 
 Implementation of abstract script engine according to JSR 223. Contains fundamental member resolvers that are used for the exporting of the Java objects into scripts. For further information how to use this core on implementing own scripting engine see [jsen-js](https://developer.mozilla.org/en-US/docs/Rhino) where it has been already used.
