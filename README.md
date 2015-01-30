@@ -1,7 +1,7 @@
-JSEN - JavaScript Engine
+JSEN Core - Java Script Engine Core
 ======
 
-Implementation of JavaScript engine for Java which makes easier to execute scripts in Java code. Interpreting of JavaScript is assured by [Rhino](https://developer.mozilla.org/en-US/docs/Rhino). Library provides especially simple and customizable way of exporting Java objects to JavaScript. Exporting is assured automatically or using special Java annotations. Interface that is used for executing scripts is familiar to JSR 223.
+Implementation of the abstract script engine following JSR 223. Contains fundamental class member resolvers that are used for exporting of the Java objects into scripts. For further information how to use this core on implementing your own scripting engine see [jsen-js](https://github.com/ITman1/jsen-js) where it has been already used.
 
 This library is fork of [ScriptBox](https://github.com/ITman1/ScriptBox).
 
@@ -29,40 +29,10 @@ Simply run command: `mvn package`
 
 Have built library (see previous section) and have it specified on classpath
 
-### Example of using library
-
-````
-public class GlobalObject {
-
-	@ScriptGetter(field="state")
-	public ITransformationState getState() {}
-		
-	@ScriptFunction(name="write")
-	public void print(Object obj) throws TransformationException {}
-}
-
-Generator generator = new Generator(transformationState);
-		
-AbstractScriptEngine engine = ScriptEngineManager.getInstance().getBrowserScriptEngine("text/javascript", 
-	new GlobalObjectScriptSettings<Generator>(generator)
-);
-
-engine.eval(script);
-````
-
-For more examples see:
-- Test of Java script annotations [here](https://github.com/ITman1/ScriptBox/blob/master/src/test/java/tests/script/engine/JavaScriptAnnotationsTests.java)
-- Package `com.jsen.script.annotation`
-- Another classes like `Window`, `Location`, etc. defined in [ScriptBox](https://github.com/ITman1/ScriptBox) project
-
 # Known issues
 
-Project is still in phase of development and targets the experimental frame
-of new HTML 5.1 specification which has not been released yet, so bugs may 
-occur in the current implementation or also in specification itself.
-
 If you run into any bug, please report on:  
-   https://github.com/ITman1/jsen/issues
+   https://github.com/ITman1/jsen-core/issues
 
 ## Issue list:
 
