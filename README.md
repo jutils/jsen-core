@@ -1,7 +1,7 @@
 JSEN Core - Java Script Engine Core
 ======
 
-Implementation of abstract script engine according to JSR 223. Contains fundamental member resolvers that are used for the exporting of the Java objects into scripts. For further information how to use this core on implementing own scripting engine see [jsen-js](https://developer.mozilla.org/en-US/docs/Rhino) where it has been already used.
+Implementation of the abstract script engine following JSR 223. Contains fundamental class member resolvers that are used for exporting of the Java objects into scripts. For further information how to use this core on implementing your own scripting engine see [jsen-js](https://github.com/ITman1/jsen-js) where it has been already used.
 
 This library is fork of [ScriptBox](https://github.com/ITman1/ScriptBox).
 
