@@ -31,12 +31,8 @@ Have built library (see previous section) and have it specified on classpath
 
 # Known issues
 
-Project is still in phase of development and targets the experimental frame
-of new HTML 5.1 specification which has not been released yet, so bugs may 
-occur in the current implementation or also in specification itself.
-
 If you run into any bug, please report on:  
-   https://github.com/ITman1/jsen/issues
+   https://github.com/ITman1/jsen-core/issues
 
 ## Issue list:
 
