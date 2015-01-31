@@ -38,4 +38,11 @@
       </plugin>
     </plugins>
   </build>
+  <description>Implementation of the abstract script engine following JSR 223. Contains fundamental class member resolvers that are used for exporting of the Java objects into scripts. For further information how to use this core on implementing your own scripting engine see jsen-js where it has been already used.
+
+This library is fork of ScriptBox.</description>
+  <url>https://github.com/ITman1/jsen-core</url>
+  <scm>
+  	<url>https://github.com/ITman1/jsen-core.git</url>
+  </scm>
 </project>
