@@ -24,8 +24,6 @@ import java.util.Set;
 import org.reflections.Reflections;
 
 import com.jsen.core.annotation.ScriptEngineFactory;
-import com.jsen.core.injectors.URLInjector;
-import com.jsen.core.injectors.XMLHttpRequestInjector;
 import com.jsen.core.misc.MimeContentRegistryBase;
 
 public class ScriptEngineManager extends MimeContentRegistryBase<AbstractScriptEngineFactory, AbstractScriptEngine> {
@@ -87,11 +85,11 @@ public class ScriptEngineManager extends MimeContentRegistryBase<AbstractScriptE
 	}
 	
 	private void registerScriptContextInjectors() {
-		registerScriptContextInjector(new URLInjector());
-		registerScriptContextInjector(new XMLHttpRequestInjector());
+		/*registerScriptContextInjector(new URLInjector());
+		registerScriptContextInjector(new XMLHttpRequestInjector());*/
 	}
 	
-	private void registerScriptContextInjector(ScriptContextInjector injector) {
+	/*private void registerScriptContextInjector(ScriptContextInjector injector) {
 		injector.registerScriptContextInject();
-	}
+	}*/
 }
