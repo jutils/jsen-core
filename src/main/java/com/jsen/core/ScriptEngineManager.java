@@ -19,9 +19,18 @@
 
 package com.jsen.core;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Set;
+import java.util.TreeSet;
 
 import org.reflections.Reflections;
+import org.reflections.scanners.ResourcesScanner;
+import org.reflections.scanners.SubTypesScanner;
+import org.reflections.scanners.TypeAnnotationsScanner;
+import org.reflections.util.ClasspathHelper;
+import org.reflections.util.ConfigurationBuilder;
+import org.reflections.util.FilterBuilder;
 
 import com.jsen.core.annotation.ScriptEngineFactory;
 import com.jsen.core.misc.MimeContentRegistryBase;
@@ -65,24 +74,26 @@ public class ScriptEngineManager extends MimeContentRegistryBase<AbstractScriptE
 	
 	@SuppressWarnings("unchecked")
 	private void registerScriptEngineFactories() {
-		Package[] packages = Package.getPackages();
-
-		for (Package currPackage : packages) {
-			String packageName = currPackage.getName();
-			if (packageName != null && packageName.startsWith("com.jsen")) {
-				Reflections reflections = new Reflections(packageName);
-				Set<Class<?>> annotated = reflections.getTypesAnnotatedWith(ScriptEngineFactory.class);
-				
-				for (Class<?> clazz : annotated) {
-					if (AbstractScriptEngineFactory.class.isAssignableFrom(clazz)) {
-						registerMimeContentFactory((Class<AbstractScriptEngineFactory>)clazz);	
-					}
-				}
+	    List<ClassLoader> classLoadersList = new LinkedList<ClassLoader>();
+	    classLoadersList.add(ClasspathHelper.contextClassLoader());
+	    classLoadersList.add(ClasspathHelper.staticClassLoader());
+	    Reflections reflections = new Reflections(new ConfigurationBuilder()
+	            .setScanners(new SubTypesScanner(), new TypeAnnotationsScanner(), new ResourcesScanner())
+	            .setUrls(ClasspathHelper.forClassLoader(classLoadersList.toArray(new ClassLoader[0])))
+	            .filterInputsBy(new FilterBuilder().include(FilterBuilder.prefix("com.jsen"))));
+		
+	    Set<Class<?>> annotated = reflections.getTypesAnnotatedWith(ScriptEngineFactory.class);
+		
+		for (Class<?> clazz : annotated) {
+			if (AbstractScriptEngineFactory.class.isAssignableFrom(clazz)) {
+				registerMimeContentFactory((Class<AbstractScriptEngineFactory>)clazz);	
 			}
 		}
+
 		
 		
 	}
+	
 	
 	private void registerScriptContextInjectors() {
 		/*registerScriptContextInjector(new URLInjector());
