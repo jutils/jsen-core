@@ -20,11 +20,11 @@ This library is fork of ScriptBox.</description>
 	</scm>
 
 	<dependencies>
-		<dependency>
-			<groupId>org.reflections</groupId>
-			<artifactId>reflections-maven</artifactId>
-			<version>0.9.9-RC2</version>
-		</dependency>
+     <dependency>
+         <groupId>org.reflections</groupId>
+         <artifactId>reflections</artifactId>
+         <version>0.9.9-RC1</version>
+     </dependency>
 
 		<dependency>
 			<groupId>javax.ws.rs</groupId>

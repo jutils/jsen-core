@@ -22,7 +22,6 @@ package com.jsen.core;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
-import java.util.TreeSet;
 
 import org.reflections.Reflections;
 import org.reflections.scanners.ResourcesScanner;
@@ -89,9 +88,6 @@ public class ScriptEngineManager extends MimeContentRegistryBase<AbstractScriptE
 				registerMimeContentFactory((Class<AbstractScriptEngineFactory>)clazz);	
 			}
 		}
-
-		
-		
 	}
 	
 	
