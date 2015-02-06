@@ -11,9 +11,10 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 
-	<description>Implementation of the abstract script engine following JSR 223. Contains fundamental class member resolvers that are used for exporting of the Java objects into scripts. For further information how to use this core on implementing your own scripting engine see jsen-js where it has been already used.
-
-This library is fork of ScriptBox.</description>
+	<description>
+    Implementation of the abstract script engine following JSR 223. Contains fundamental class member resolvers that are used for exporting of the Java objects into scripts. For further information how to use this core on implementing your own scripting engine see jsen-js where it has been already used.
+    
+    This library is fork of ScriptBox.</description>
 	<url>https://github.com/jutils/jsen-core</url>
 	<licenses>
     <license>
