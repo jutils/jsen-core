@@ -24,7 +24,7 @@ Simply run command: `mvn package`
 ### Using Maven
 ```
 <dependency>
-	<groupId>com.jsen</groupId>
+	<groupId>com.github.jutils</groupId>
 	<artifactId>jsen-core</artifactId>
 	<version>0.0.1</version>
 </dependency>

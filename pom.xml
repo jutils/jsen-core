@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.jsen</groupId>
+	<groupId>com.github.jutils</groupId>
 	<artifactId>jsen-core</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>jsen-core</name>
@@ -14,10 +14,19 @@
 	<description>Implementation of the abstract script engine following JSR 223. Contains fundamental class member resolvers that are used for exporting of the Java objects into scripts. For further information how to use this core on implementing your own scripting engine see jsen-js where it has been already used.
 
 This library is fork of ScriptBox.</description>
-	<url>https://github.com/ITman1/jsen-core</url>
-	<scm>
-		<url>https://github.com/ITman1/jsen-core.git</url>
-	</scm>
+	<url>https://github.com/jutils/jsen-core</url>
+	<licenses>
+    <license>
+      <name>GNU General Public License (GPL)</name>
+      <url>http://www.gnu.org/licenses/gpl.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <scm>
+    <url>https://github.com/jutils/jsen-core</url>
+    <connection>scm:git:git://github.com/jutils/jsen-core.git</connection>
+    <developerConnection>scm:git:git@github.com:jutils/jsen-core.git</developerConnection>
+  </scm>
 
 	<dependencies>
      <dependency>
@@ -103,8 +112,18 @@ This library is fork of ScriptBox.</description>
 								<goals>
 									<goal>jar</goal>
 								</goals>
-							</execution>
+							</execution>      
 						</executions>
+            <configuration>
+            	<links>
+            		<link>http://docs.oracle.com/javase/6/docs/api/</link>
+            	</links>
+            	<source>1.6</source>
+            	<show>public</show>
+            	<doctitle>JSEN Core</doctitle>
+            	<title>JSEN Core</title>
+            	<sourcepath>${basedir}/src/main/java;${basedir}/src/test/java</sourcepath>
+            </configuration>
 					</plugin>
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
