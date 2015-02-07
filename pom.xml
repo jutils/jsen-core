@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.jutils</groupId>
 	<artifactId>jsen-core</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>jsen-core</name>
 
 	<properties>
@@ -27,7 +27,7 @@
     <url>https://github.com/jutils/jsen-core</url>
     <connection>scm:git:git://github.com/jutils/jsen-core.git</connection>
     <developerConnection>scm:git:git@github.com:jutils/jsen-core.git</developerConnection>
-    <tag>jsen-core-0.0.1</tag>
+    <tag>HEAD</tag>
   </scm>
 
 	<dependencies>
